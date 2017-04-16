@@ -1,0 +1,85 @@
+
+
+body {
+  margin: 0px auto;
+  padding:0px;
+  background-color: #eeb;
+  position:relative;
+  font-size: xx-large;
+}
+
+body>#main {
+  position:absolute;
+  padding-left: 32px;
+  padding-right: 32px;
+  height: 100%;
+}
+
+h1 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 100%;
+}
+
+div.page {
+  position:fixed;
+  width: 100%;
+}
+
+div.pager {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+}
+
+code {
+  border-radius: 4px;
+  margin: 2px;
+  padding: 5px;
+  background-color: #222;
+  color: #fff;
+}
+
+.example-appear {
+  opacity: 0.01;
+  transform: translate3d(100%, 0, 0);
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+  transform: none;
+  transition: all .2s ease-in;
+}
+
+.example-enter {
+  opacity: 0.01;
+  transform: translate3d(100%, 0, 0);
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transform: none;
+  transition: all .2s ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+  transform: none;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transform: translate3d(-100%, 0, 0);
+  transition: all .2s ease-in;
+}

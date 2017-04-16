@@ -1,0 +1,9 @@
+lib/
+node_modules/
+.npm
+*.tgz
+.yarn-integrity
+.env
+
+/*.md
+/*.html
