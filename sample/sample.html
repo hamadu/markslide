@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sample slideshow</title>
+    <style>body {
+  margin: 0px auto;
+  padding:0px;
+  background-color: #fc9;
+  position:relative;
+  font-size: xx-large;
+}
+
+#title {
+  margin: auto;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  font-size: 300%;
+}
+
+body>#main {
+  position:absolute;
+  padding-left: 32px;
+  padding-right: 32px;
+  height: 100%;
+}
+
+h1 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 100%;
+}
+
+div.page {
+  position:fixed;
+  width: 100%;
+  height: 100%;
+}
+
+div.pager {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+}
+
+pre {
+  border-radius: 4px;
+  margin: 2px;
+  padding: 5px;
+  background-color: #222;
+  color: #fff;
+}
+
+code {
+  border-radius: 4px;
+  margin: 2px;
+  padding: 5px;
+  background-color: #222;
+  color: #fff;
+}
+
+.katex-html {
+  display: none;
+}
+
+.example-appear {
+  opacity: 0.01;
+  transform: translate3d(100%, 0, 0);
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+  transform: none;
+  transition: all .2s ease-in;
+}
+
+.example-enter {
+  opacity: 0.01;
+  transform: translate3d(100%, 0, 0);
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transform: none;
+  transition: all .2s ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+  transform: none;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transform: translate3d(-100%, 0, 0);
+  transition: all .2s ease-in;
+}
+</style>
+  </head>
+  <body>
+    <div id="main" data-contents='[{"id":0,"contents":"<div class=\"container\"><h1 id=\"title\">Sample slideshow</h1></div>"},{"id":"\n\n# Page one\n\n- 💀\n- 😎😎\n- 🙏🙏🙏\n- ⛩⛩⛩⛩\n\n## level 2\n\n- hoge\n  - moge\n  - poyo\n- ネコ目\n  - イヌ科\n    - キツネ属\n      - フェネック\n\n","contents":"<div class=\"container\"><h1 id=\"page-one\">Page one</h1>\n<ul>\n<li>💀</li>\n<li>😎😎</li>\n<li>🙏🙏🙏</li>\n<li>⛩⛩⛩⛩</li>\n</ul>\n<h2 id=\"level-2\">level 2</h2>\n<ul>\n<li>hoge<ul>\n<li>moge</li>\n<li>poyo</li>\n</ul>\n</li>\n<li>ネコ目<ul>\n<li>イヌ科<ul>\n<li>キツネ属<ul>\n<li>フェネック</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</div>"},{"id":"\n\n# Image\n\n![img](https://i.gyazo.com/1f9e00c742ed64fb8bed854e2534910b.jpg)\n\n\n","contents":"<div class=\"container\"><h1 id=\"image\">Image</h1>\n<p><img src=\"https://i.gyazo.com/1f9e00c742ed64fb8bed854e2534910b.jpg\" alt=\"img\"></p>\n</div>"},{"id":"\n\n# pre\n\n```\na AA\n****** HO\n  b\n^ ^ ^ ^ ^ ^  \n```\n\n","contents":"<div class=\"container\"><h1 id=\"pre\">pre</h1>\n<pre><code>a AA\n****** HO\n  b\n^ ^ ^ ^ ^ ^\n</code></pre></div>"},{"id":"\n\n# Math\n\n```\n* test\n* test2\n* test3\n```\n\n$$ e^{i\\theta} = \\cos\\theta + i\\sin\\theta $$ // $$ X_{1,1} $$\n\n$$ a_1, a_2 ... , a_n $$\n\n$$ f(x,y) = \\frac{x}{y} $$\n","contents":"<div class=\"container\"><h1 id=\"math\">Math</h1>\n<pre><code>* test\n* test2\n* test3\n</code></pre><p><span class=\"katex\"><span class=\"katex-mathml\"><math><semantics><mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>θ</mi></mrow></msup><mo>=</mo><mi>cos</mi><mi>θ</mi><mo>+</mo><mi>i</mi><mi>sin</mi><mi>θ</mi></mrow><annotation encoding=\"application/x-tex\"> e^{i\\theta} = \\cos\\theta + i\\sin\\theta </annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"strut\" style=\"height:0.849108em;\"></span><span class=\"strut bottom\" style=\"height:0.932438em;vertical-align:-0.08333em;\"></span><span class=\"base textstyle uncramped\"><span class=\"mord\"><span class=\"mord mathit\">e</span><span class=\"msupsub\"><span class=\"vlist\"><span style=\"top:-0.363em;margin-right:0.05em;\"><span class=\"fontsize-ensurer reset-size5 size5\"><span style=\"font-size:0em;\">​</span></span><span class=\"reset-textstyle scriptstyle uncramped mtight\"><span class=\"mord scriptstyle uncramped mtight\"><span class=\"mord mathit mtight\">i</span><span class=\"mord mathit mtight\" style=\"margin-right:0.02778em;\">θ</span></span></span></span><span class=\"baseline-fix\"><span class=\"fontsize-ensurer reset-size5 size5\"><span style=\"font-size:0em;\">​</span></span>​</span></span></span></span><span class=\"mrel\">=</span><span class=\"mop\">cos</span><span class=\"mord mathit\" style=\"margin-right:0.02778em;\">θ</span><span class=\"mbin\">+</span><span class=\"mord mathit\">i</span><span class=\"mop\">sin</span><span class=\"mord mathit\" style=\"margin-right:0.02778em;\">θ</span></span></span></span> // <span class=\"katex\"><span class=\"katex-mathml\"><math><semantics><mrow><msub><mi>X</mi><mrow><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\"> X_{1,1} </annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"strut\" style=\"height:0.68333em;\"></span><span class=\"strut bottom\" style=\"height:0.969438em;vertical-align:-0.286108em;\"></span><span class=\"base textstyle uncramped\"><span class=\"mord\"><span class=\"mord mathit\" style=\"margin-right:0.07847em;\">X</span><span class=\"msupsub\"><span class=\"vlist\"><span style=\"top:0.15em;margin-right:0.05em;margin-left:-0.07847em;\"><span class=\"fontsize-ensurer reset-size5 size5\"><span style=\"font-size:0em;\">​</span></span><span class=\"reset-textstyle scriptstyle cramped mtight\"><span class=\"mord scriptstyle cramped mtight\"><span class=\"mord mathrm mtight\">1</span><span class=\"mpunct mtight\">,</span><span class=\"mord mathrm mtight\">1</span></span></span></span><span class=\"baseline-fix\"><span class=\"fontsize-ensurer reset-size5 size5\"><span style=\"font-size:0em;\">​</span></span>​</span></span></span></span></span></span></span></p>\n<p><span class=\"katex\"><span class=\"katex-mathml\"><math><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo separator=\"true\">,</mo><msub><mi>a</mi><mn>2</mn></msub><mi mathvariant=\"normal\">.</mi><mi mathvariant=\"normal\">.</mi><mi mathvariant=\"normal\">.</mi><mo separator=\"true\">,</mo><msub><mi>a</mi><mi>n</mi></msub></mrow><annotation encoding=\"application/x-tex\"> a_1, a_2 ... , a_n </annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"strut\" style=\"height:0.43056em;\"></span><span class=\"strut bottom\" style=\"height:0.625em;vertical-align:-0.19444em;\"></span><span class=\"base textstyle uncramped\"><span class=\"mord\"><span class=\"mord mathit\">a</span><span class=\"msupsub\"><span class=\"vlist\"><span style=\"top:0.15em;margin-right:0.05em;margin-left:0em;\"><span class=\"fontsize-ensurer reset-size5 size5\"><span style=\"font-size:0em;\">​</span></span><span class=\"reset-textstyle scriptstyle cramped mtight\"><span class=\"mord mathrm mtight\">1</span></span></span><span class=\"baseline-fix\"><span class=\"fontsize-ensurer reset-size5 size5\"><span style=\"font-size:0em;\">​</span></span>​</span></span></span></span><span class=\"mpunct\">,</span><span class=\"mord\"><span class=\"mord mathit\">a</span><span class=\"msupsub\"><span class=\"vlist\"><span style=\"top:0.15em;margin-right:0.05em;margin-left:0em;\"><span class=\"fontsize-ensurer reset-size5 size5\"><span style=\"font-size:0em;\">​</span></span><span class=\"reset-textstyle scriptstyle cramped mtight\"><span class=\"mord mathrm mtight\">2</span></span></span><span class=\"baseline-fix\"><span class=\"fontsize-ensurer reset-size5 size5\"><span style=\"font-size:0em;\">​</span></span>​</span></span></span></span><span class=\"mord mathrm\">.</span><span class=\"mord mathrm\">.</span><span class=\"mord mathrm\">.</span><span class=\"mpunct\">,</span><span class=\"mord\"><span class=\"mord mathit\">a</span><span class=\"msupsub\"><span class=\"vlist\"><span style=\"top:0.15em;margin-right:0.05em;margin-left:0em;\"><span class=\"fontsize-ensurer reset-size5 size5\"><span style=\"font-size:0em;\">​</span></span><span class=\"reset-textstyle scriptstyle cramped mtight\"><span class=\"mord mathit mtight\">n</span></span></span><span class=\"baseline-fix\"><span class=\"fontsize-ensurer reset-size5 size5\"><span style=\"font-size:0em;\">​</span></span>​</span></span></span></span></span></span></span></p>\n<p><span class=\"katex\"><span class=\"katex-mathml\"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo separator=\"true\">,</mo><mi>y</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>x</mi></mrow><mrow><mi>y</mi></mrow></mfrac></mrow><annotation encoding=\"application/x-tex\"> f(x,y) = \\frac{x}{y} </annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"strut\" style=\"height:0.75em;\"></span><span class=\"strut bottom\" style=\"height:1.2311079999999999em;vertical-align:-0.481108em;\"></span><span class=\"base textstyle uncramped\"><span class=\"mord mathit\" style=\"margin-right:0.10764em;\">f</span><span class=\"mopen\">(</span><span class=\"mord mathit\">x</span><span class=\"mpunct\">,</span><span class=\"mord mathit\" style=\"margin-right:0.03588em;\">y</span><span class=\"mclose\">)</span><span class=\"mrel\">=</span><span class=\"mord reset-textstyle textstyle uncramped\"><span class=\"mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter\"></span><span class=\"mfrac\"><span class=\"vlist\"><span style=\"top:0.345em;\"><span class=\"fontsize-ensurer reset-size5 size5\"><span style=\"font-size:0em;\">​</span></span><span class=\"reset-textstyle scriptstyle cramped mtight\"><span class=\"mord scriptstyle cramped mtight\"><span class=\"mord mathit mtight\" style=\"margin-right:0.03588em;\">y</span></span></span></span><span style=\"top:-0.22999999999999998em;\"><span class=\"fontsize-ensurer reset-size5 size5\"><span style=\"font-size:0em;\">​</span></span><span class=\"reset-textstyle textstyle uncramped frac-line\"></span></span><span style=\"top:-0.394em;\"><span class=\"fontsize-ensurer reset-size5 size5\"><span style=\"font-size:0em;\">​</span></span><span class=\"reset-textstyle scriptstyle uncramped mtight\"><span class=\"mord scriptstyle uncramped mtight\"><span class=\"mord mathit mtight\">x</span></span></span></span><span class=\"baseline-fix\"><span class=\"fontsize-ensurer reset-size5 size5\"><span style=\"font-size:0em;\">​</span></span>​</span></span></span><span class=\"mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter\"></span></span></span></span></span></p>\n</div>"}]'></div>
+    <script type="text/javascript" src="./../lib/main.js"></script>
+  </body>
+</html>

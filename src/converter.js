@@ -10,7 +10,7 @@ const encoding = { encoding: 'utf8' };
 
 const options = args([
   { name: 'verbose', alias: 'v', type: Boolean },
-  { name: 'in', type: String, defaultValue: './sample.md' },
+  { name: 'in', type: String },
   { name: 'out', type: String }
 ]);
 
@@ -36,9 +36,15 @@ function parseKatex(page) {
   return pageWithMath;
 }
 
-const contents = pages.slice(1).map((page, index) => {
-  return { id: page, contents: parseKatex(marked(page)) }
+const titlePage = {
+  id: 0,
+  contents: '<div class="container"><h1 id="title">' + meta['title'] + '</h1></div>'
+};
+
+const contentPages = pages.slice(1).map((page, index) => {
+  return { id: page, contents: '<div class="container">' + parseKatex(marked(page)) + '</div>' }
 });
+const contents = [titlePage].concat(contentPages);
 
 const htmlTemplate = fs.readFileSync('./templates/template.html', encoding);
 const cssTemplate = fs.readFileSync('./templates/style.css', encoding);
@@ -46,4 +52,8 @@ const cssTemplate = fs.readFileSync('./templates/style.css', encoding);
 const css = mustache.render(cssTemplate, { background: meta['background'] || '#fff' });
 const output = mustache.render(htmlTemplate, { title: meta['title'] || 'title', contents: JSON.stringify(contents), css: css });
 
-process.stdout.write(output);
+if (options['out']) {
+  fs.writeFileSync(options['out'], output, encoding);
+} else {
+  process.stdout.write(output);
+}
