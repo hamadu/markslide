@@ -41,12 +41,24 @@ img {
   max-width: 80%;
 }
 
+pre {
+  border-radius: 4px;
+  margin: 2px;
+  padding: 5px;
+  background-color: #222;
+  color: #fff;
+}
+
 code {
   border-radius: 4px;
   margin: 2px;
   padding: 5px;
   background-color: #222;
   color: #fff;
+}
+
+.katex-html {
+  display: none;
 }
 
 .example-appear {

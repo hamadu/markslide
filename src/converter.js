@@ -4,6 +4,7 @@ const args = require('command-line-args');
 const marked = require('marked');
 const fs = require('fs');
 const mustache = require('mustache');
+const katex = require('katex');
 
 const encoding = { encoding: 'utf8' };
 
@@ -24,8 +25,19 @@ pages[0].split('\n').forEach(row => {
   }
 });
 
+function parseKatex(page) {
+  let pageWithMath = page;
+  const regex = /\$\$(.*?)\$\$/g;
+  let matchResult = null;
+  while ((matchResult = regex.exec(page)) !== null) {
+    const math = katex.renderToString(matchResult[1]);
+    pageWithMath = pageWithMath.replace(/\$\$(.*?)\$\$/, math);
+  }
+  return pageWithMath;
+}
+
 const contents = pages.slice(1).map((page, index) => {
-  return { id: page, contents: marked(page) }
+  return { id: page, contents: parseKatex(marked(page)) }
 });
 
 const htmlTemplate = fs.readFileSync('./templates/template.html', encoding);
