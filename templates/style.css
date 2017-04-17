@@ -1,9 +1,7 @@
-
-
 body {
   margin: 0px auto;
   padding:0px;
-  background-color: #eeb;
+  background-color: {{background}};
   position:relative;
   font-size: xx-large;
 }
