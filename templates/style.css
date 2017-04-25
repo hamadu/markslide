@@ -3,7 +3,7 @@ body {
   padding:0px;
   background-color: {{background}};
   position:relative;
-  font-size: 2.5em;
+  font-size: 2.3em;
 }
 
 #title {
@@ -31,6 +31,15 @@ h1 {
   width: 100%;
 }
 
+div.container div.twopane_left {
+  width: 50%;
+  float: left;
+}
+
+div.container div.twopane_right {
+  margin-left: 50%;
+}
+
 div.page {
   position:fixed;
   width: 100%;
@@ -51,6 +60,7 @@ img {
   margin-left: auto;
   margin-right: auto;
   max-width: 80%;
+  max-height: 640px;
 }
 
 pre {
